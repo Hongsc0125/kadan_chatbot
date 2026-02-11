@@ -1,7 +1,17 @@
--- Kadan Chatbot Initial Database Schema
--- Recommended to run this first to set up the structure.
+-- Kadan Chatbot Initial Database Setup
+-- Run this script as 'postgres' or a superuser to create the database and schema.
 
--- Create table for Runes
+-- 1. Create Database (If not exists - Postgres doesn't support 'IF NOT EXISTS' for CREATE DATABASE directly in a single command, often handled via script or shell)
+-- SELECT 'CREATE DATABASE kadan_chat' WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = 'kadan_chat')\gexec
+
+-- Note: Usually CREATE DATABASE must be run on its own. 
+-- Included here for reference/direct execution in shells that support it.
+-- CREATE DATABASE kadan_chat;
+
+-- 2. Connect to the database
+-- \c kadan_chat
+
+-- 3. Create table for Runes
 CREATE TABLE IF NOT EXISTS runes (
     id BIGSERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
