@@ -1,0 +1,17 @@
+# 환경변수
+.env
+
+# Gradle
+.gradle/
+build/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+
+# Android 데이터
+data/
